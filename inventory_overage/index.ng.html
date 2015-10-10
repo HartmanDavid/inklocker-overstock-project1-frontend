@@ -1,0 +1,81 @@
+
+      <div class="logo">
+        <img src="http://inklocker.com/modules/core/img/brand/logo.png" id='main-logo'>
+      </div>
+      {{2+4}}
+      {{main.message}}
+      <table class="table table-hover" ng-controller='mainController'> <!-- START of input form -->
+        <thead>
+          <tr>
+                <form class="form-inline" > <!-- ng-submit="main.addShirt()"-->
+                  <div class="form-group">
+                    <th>
+                      <label for="inputSex">Sex</label>
+                      <select type="text" ng-model="newShirt.shirtData.sex" class="form-control" id='inputSex'>  <!-- 1st selection -->
+                        <option>female</option>
+                        <option>male</option>
+                        <option>unisex</option>
+                      </select>
+                    </th>
+                    <th>
+                      <label for="inputDesign">Design</label>  <!-- 2nd selection-->
+                      <select type="text" ng-model="newShirt.shirtData.design" class="form-control" id="inputDesign">
+                        <option>A123</option>
+                        <option>B456</option>
+                        <option>C789</option>
+                      </select>
+                    </th>
+                    <th>
+                      <label for="inputColor">Color</label>  <!-- 3rd selection-->
+                      <select type="text" ng-model="newShirt.shirtData.color" class="form-control" id="inputColor">
+                        <option>blue</option>
+                        <option>purple</option>
+                        <option>white</option>
+                        <option>green</option>
+                        <option>yellow</option>
+                      </select>
+                    </th>
+                    <th>
+                      <label for="inputSize">Size</label>  <!-- 4th selection-->
+                      <select type="text" ng-model="newShirt.shirtData.size" class="form-control" id="inputSize">
+                        <option>small</option>
+                        <option>medium</option>
+                        <option>large</option>
+                      </select>
+                    </th>
+                    <th>
+                      <label for="inputImage">Image</label>  <!-- 5th selection-->
+                      <select type="text" ng-model="newShirt.shirtData.image" class="form-control" id="inputImage">
+                        <option>QXR</option>
+                        <option>GBA</option>
+                        <option>SOI</option>
+                      </select>
+                    </th>
+                  </div>
+                  <th><button type="submit" class="btn btn-primary" ng-click="shirts.push(newShirt); newShirt=''; ">T-Add</button></th>  <!-- Button to submit to DB-->
+                </form>
+          </tr>
+        </thead>
+      </table> <!-- END of Input form-->
+      <table class="table table-hover" ng-controller='mainController'>  <!-- START of DATA table-->
+        <thead>
+          <tr>
+            <th>Sex</th>
+            <th>Design</th>
+            <th>Color</th>
+            <th>Size</th>
+            <th>Image</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="shirt in shirts">
+            <td>{{shirt.sex}}</td>
+            <td>{{shirt.design}}</td>
+            <td>{{shirt.color}}</td>
+            <td>{{shirt.size}}</td>
+            <td>{{shirt.image}}</td>
+            <td>{{shirt.quantity}}</td>
+          </tr>
+        </tbody>
+      </table>
